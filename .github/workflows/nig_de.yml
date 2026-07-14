@@ -36,8 +36,7 @@ jobs:
           analy_js: analy_key.json
           de_course: ${{ secrets.DE_COURSE_NIG }}
           IMPERSONATE_AS: ${{ secrets.IMPERSONATE_AS}}
-          DRY_RUN: ${{ github.event.inputs.dry_run }}
-        run: python main/main_nig.py
+        run: python .prod/main_nig.py
 
       - name: Clean up credentials
         if: always()

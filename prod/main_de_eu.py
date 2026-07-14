@@ -20,15 +20,15 @@ def main():
     sheet_key_path = get_env("eomo_json_key")
     classroom_key_path = get_env("analy_js")
     course_id = get_env("de_course")
-
+    IMPERSONATE_AS = get_env("IMPERSONATE_AS")
     logging.info("Fetching student information from sheet")
     sheet_creds = cred(sheet_key_path, SHEET_SCOPE)
 
     logging.info("Authenticating with Classroom")
-    classroom_creds = cred(classroom_key_path, CLASSROOM_SCOPE, subject=teacher)
+    classroom_creds = cred(classroom_key_path, CLASSROOM_SCOPE, subject=IMPERSONATE_AS)
     classroom_service = build("classroom", "v1", credentials=classroom_creds)
 
-    df = read_sheet(build, sheet_id, "nig_student", sheet_creds)
+    df = read_sheet(build, sheet_id, "eu_student", sheet_creds)
 
     if df.empty:
         logging.warning("No student data returned — nothing to invite")

@@ -1,12 +1,12 @@
-name: Invite NIG Students - Data Engineering
+name: Invite US Students - Data Engineering
 
 on:
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: "If true, log actions without sending real invitations"
-        required: false
-        default: "false"
+    # inputs:
+    #   dry_run:
+    #     description: "If true, log actions without sending real invitations"
+    #     required: false
+    #     default: "false"
 
 jobs:
   invite:
@@ -34,9 +34,9 @@ jobs:
           de_sheet: ${{ secrets.DE_SHEET }}
           eomo_json_key: eomo_key.json
           analy_js: analy_key.json
-          de_course: ${{ secrets.DE_COURSE_NIG }}
-          DRY_RUN: ${{ github.event.inputs.dry_run }}
-        run: python main/main_us.py
+          de_course: ${{ secrets.DE_COURSE }}
+          
+        run: python .prd/main_us.py
 
       - name: Clean up credentials
         if: always()
