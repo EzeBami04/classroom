@@ -3,12 +3,12 @@ from googleapiclient.errors import HttpError
 from google.oauth2 import service_account
 import pandas as pd
 import logging
-
-from dotenv import load_dotenv
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 import os
+# from dotenv import load_dotenv
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
-load_dotenv()
+
+# load_dotenv()
 
 def get_env(key: str, required: bool = True, default=None):
     """
