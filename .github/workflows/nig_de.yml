@@ -31,6 +31,7 @@ jobs:
           analy_js: analy_key.json
           de_course: ${{ secrets.DE_COURSE }}
           IMPERSONATE_AS: ${{ secrets.IMPERSONATE_AS }}
+          PYTHONPATH: ${{ github.workspace }}
         run: python prod/main_de_nig.py
 
       - name: Clean up credentials

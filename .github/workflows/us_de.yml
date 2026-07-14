@@ -35,7 +35,7 @@ jobs:
           eomo_json_key: eomo_key.json
           analy_js: analy_key.json
           de_course: ${{ secrets.DE_COURSE }}
-          
+          PYTHONPATH: ${{ github.workspace }}
         run: python .prd/main_us.py
 
       - name: Clean up credentials
