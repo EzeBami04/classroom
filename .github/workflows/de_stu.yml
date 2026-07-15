@@ -32,8 +32,7 @@ jobs:
           de_course: ${{ secrets.DE_COURSE }}
           IMPERSONATE_AS: ${{ secrets.IMPERSONATE_AS }}
           PYTHONPATH: ${{ github.workspace }}
-        run: |
-             python prod/main_de.py
+        run: python prod/main_de.py
              
 
       - name: Clean up credentials

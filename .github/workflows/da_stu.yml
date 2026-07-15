@@ -1,4 +1,4 @@
-name: Invite EU Students  Data Engineering
+name: Invite EU Students  Data Analytics
 
 on:
   workflow_dispatch:
@@ -27,12 +27,12 @@ jobs:
 
       - name: Run invite script
         env:
-          de_sheet: ${{ secrets.DE_SHEET }}
+          de_sheet: ${{ secrets.DA_SHEET }}
           eomo_json_key: eomo_key.json
           analy_js: analy_key.json
-          de_course: ${{ secrets.DE_COURSE }}
+          de_course: ${{ secrets.DA_FND }}
           PYTHONPATH: ${{ github.workspace }}
-        run: python .prd/main_eu.py
+        run: python .prd/main_da.py
         
       - name: Clean up credentials
         if: always()

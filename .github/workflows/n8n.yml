@@ -1,4 +1,4 @@
-name: Invite Nigerian Students to Data Engineering
+name: Invite n8n students
 
 on:
   workflow_dispatch:
@@ -26,14 +26,14 @@ jobs:
 
       - name: Run invite script
         env:
-          de_sheet: ${{ secrets.DA_SHEET }}
+          de_sheet: ${{ secrets.N8N_SHEET }}
           eomo_json_key: eomo_key.json
           analy_js: analy_key.json
-          de_course: ${{ secrets.DA_COURSE }}
+          de_course: ${{ secrets.N8N_COURSE }}
           IMPERSONATE_AS: ${{ secrets.IMPERSONATE_AS }}
           PYTHONPATH: ${{ github.workspace }}
 
-        run: python prod/main_de_nig.py
+        run: python prod/main_n8n.py
 
       - name: Clean up credentials
         if: always()
