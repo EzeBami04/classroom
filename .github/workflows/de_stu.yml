@@ -1,0 +1,41 @@
+name: Invite  Students to Data Engineering
+
+on:
+  workflow_dispatch:
+
+jobs:
+  invite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write service account key files
+        run: |
+          echo '${{ secrets.EOMO_JSON_KEY }}' > eomo_key.json
+          echo '${{ secrets.ANALY_JS_KEY }}' > analy_key.json
+
+      - name: Run invite script
+        env:
+          de_sheet: ${{ secrets.DE_SHEET }}
+          eomo_json_key: eomo_key.json
+          analy_js: analy_key.json
+          de_course: ${{ secrets.DE_COURSE }}
+          IMPERSONATE_AS: ${{ secrets.IMPERSONATE_AS }}
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+             python prod/main_de.py
+             
+
+      - name: Clean up credentials
+        if: always()
+        run: rm -f eomo_key.json analy_key.json
