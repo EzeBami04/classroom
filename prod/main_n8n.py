@@ -12,7 +12,7 @@ CLASSROOM_SCOPE = [
     "https://www.googleapis.com/auth/classroom.rosters",
     "https://www.googleapis.com/auth/classroom.courses.readonly",
     ]
-teacher = get_env("course_owner")
+
 
 #=======================================================
 def main():
