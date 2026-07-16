@@ -30,7 +30,7 @@ jobs:
           da_sheet: ${{ secrets.DA_SHEET }}
           eomo_json_key: eomo_key.json
           analy_js: analy_key.json
-          da_course: ${{ secrets.DA_FND }}
+          DA_COURSE: ${{ secrets.DA_FND }}
           PYTHONPATH: ${{ github.workspace }}
         run: python prod/main_da.py
         

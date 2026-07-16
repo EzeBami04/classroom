@@ -19,7 +19,7 @@ def main():
     sheet_id = get_env("da_sheet")
     sheet_key_path = get_env("eomo_json_key")
     classroom_key_path = get_env("analy_js")
-    course_id = get_env("da_course")
+    course_id = get_env("DA_COURSE")
     IMPERSONATE_AS = get_env("IMPERSONATE_AS")
     logging.info("Fetching student information from sheet")
     sheet_creds = cred(sheet_key_path, SHEET_SCOPE)
