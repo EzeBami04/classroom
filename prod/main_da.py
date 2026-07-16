@@ -16,7 +16,7 @@ CLASSROOM_SCOPE = [
 
 #===============================================
 def main():
-    sheet_id = get_env("DA_SHEET")
+    sheet_id = get_env("da_sheet")
     sheet_key_path = get_env("eomo_json_key")
     classroom_key_path = get_env("analy_js")
     course_id = get_env("da_course")

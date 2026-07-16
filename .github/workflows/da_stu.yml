@@ -27,7 +27,7 @@ jobs:
 
       - name: Run invite script
         env:
-          de_sheet: ${{ secrets.DA_SHEET }}
+          da_sheet: ${{ secrets.DA_SHEET }}
           eomo_json_key: eomo_key.json
           analy_js: analy_key.json
           de_course: ${{ secrets.DA_FND }}
