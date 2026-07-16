@@ -1,4 +1,4 @@
-name: Invite EU Students  Data Analytics
+name: Invite  Data Analytics students
 
 on:
   workflow_dispatch:
