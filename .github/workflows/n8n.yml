@@ -1,6 +1,8 @@
 name: Invite n8n students
 
 on:
+  push:
+    branch: ["main"]
   workflow_dispatch:
 
 jobs:
