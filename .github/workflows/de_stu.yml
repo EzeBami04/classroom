@@ -1,6 +1,8 @@
 name: Invite  Students to Data Engineering
 
 on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
