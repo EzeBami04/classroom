@@ -29,7 +29,7 @@ def main():
     classroom_creds = cred(classroom_path, CLASSROOM_SCOPE, subject=IMPERSONATE_AS)
     classroom_service = build("classroom", "v1", credentials=classroom_creds)
 
-    df = read_sheet(build, sheet_id, "de_student", sheet_creds)
+    df = read_sheet(build, sheet_id, "de_students", sheet_creds)
 
     if df.empty:
         logging.warning("No student data returned  nothing to invite")
